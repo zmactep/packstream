@@ -16,6 +16,7 @@ import Data.ByteString (ByteString)
 import Data.Text (Text)
 import Data.Map.Strict (Map)
 import Control.Monad.Except (MonadError(..), liftEither)
+import Control.Monad.Fail (MonadFail (..))
 
 
 -- |The data types that can be interpreted or parsed to/from 'PackStream' 'ByteString'

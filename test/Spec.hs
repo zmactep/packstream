@@ -8,6 +8,7 @@ import qualified Data.ByteString as B (pack, unpack, take, empty)
 import Data.ByteString.Lazy (toStrict, fromStrict)
 import Data.Map.Strict (Map)
 import qualified Data.Map.Strict as M (empty, fromList)
+import Control.Monad.Fail (MonadFail (..))
 
 import Data.PackStream (PackStreamValue (..), Value(..), (=:), unpackFail)
 import Data.PackStream.Internal.Hex (Hex(..))
