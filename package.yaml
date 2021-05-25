@@ -1,0 +1,44 @@
+name:                packstream
+version:             0.1.0.0
+github:              "zmactep/packstream"
+license:             BSD3
+author:              "Pavel Yakovlev"
+maintainer:          "pavel@yakovlev.me"
+copyright:           "(c) 2021, Pavel Yakovlev"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            PackStream converter for Neo4j BOLT protocol
+category:            Data
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/zmactep/packstream#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- text >= 1.2.2.1 && < 1.3
+- bytestring >= 0.10.8.1 && < 0.12
+- binary >= 0.8.3.0 && < 0.11
+- data-binary-ieee754 >= 0.4.4 && < 0.5
+- containers >= 0.5.7.1 && < 0.7
+- mtl >= 2.2.0 && < 2.3
+
+library:
+  source-dirs: src
+
+tests:
+  packstream-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - packstream
+    - hspec >= 2.4.1 && < 2.9
