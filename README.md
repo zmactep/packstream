@@ -1,6 +1,6 @@
 # packstream
 
-[![Travis](https://img.shields.io/travis/zmactep/packstream.svg)](https://travis-ci.org/zmactep/packstream)
+[![Travis](https://img.shields.io/travis/zmactep/packstream.svg)](https://travis-ci.com/zmactep/packstream)
 [![GitHub Build](https://github.com/zmactep/packstream/workflows/build/badge.svg)](https://github.com/zmactep/packstream/actions?query=workflow%3A%22build%22)
 [![hackage](https://img.shields.io/hackage/v/packstream.svg)](https://hackage.haskell.org/package/packstream)
 [![hackage-deps](https://img.shields.io/hackage-deps/v/packstream.svg)](https://hackage.haskell.org/package/packstream)
