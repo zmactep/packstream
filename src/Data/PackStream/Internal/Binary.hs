@@ -3,7 +3,7 @@
 {-# LANGUAGE FlexibleContexts #-}
 module Data.PackStream.Internal.Binary where
 
-import Data.PackStream.Internal.Type ( PackStream, PackStreamError(..) )
+import Data.PackStream.Internal.Type (PackStreamError(..))
 
 import Data.ByteString (ByteString)
 import qualified Data.ByteString as BS (length)
@@ -11,9 +11,9 @@ import Data.ByteString.Lazy (fromStrict, toStrict)
 import Data.Binary (Binary, encode, decode)
 import Data.Binary.IEEE754 (wordToDouble, doubleToWord)
 import Data.Text (Text)
-import Data.Int (Int, Int8, Int16, Int32, Int64)
+import Data.Int (Int8, Int16, Int32, Int64)
 import Control.Applicative (liftA2)
-import Data.Word (Word, Word8, Word16, Word32, Word64)
+import Data.Word (Word8, Word16, Word32, Word64)
 import Control.Monad.Except (throwError, MonadError)
 import Data.Text.Encoding (decodeUtf8, encodeUtf8)
 

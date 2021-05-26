@@ -1,7 +1,10 @@
 # packstream
 
 [![Travis](https://img.shields.io/travis/com/zmactep/packstream)](https://travis-ci.com/zmactep/packstream)
-[![GitHub Build](https://github.com/zmactep/packstream/workflows/build/badge.svg)](https://github.com/zmactep/packstream/actions?query=workflow%3A%22build%22)
+[![GitHub Build](https://github.com/zmactep/packstream/workflows/8.10.1/badge.svg)](https://github.com/zmactep/packstream/actions?query=workflow%3A%228.10.1%22)
+[![GitHub Build](https://github.com/zmactep/packstream/workflows/8.8.3/badge.svg)](https://github.com/zmactep/packstream/actions?query=workflow%3A%228.8.3%22)
+[![GitHub Build](https://github.com/zmactep/packstream/workflows/8.6.5/badge.svg)](https://github.com/zmactep/packstream/actions?query=workflow%3A%228.6.5%22)
+[![GitHub Build](https://github.com/zmactep/packstream/workflows/8.0.2/badge.svg)](https://github.com/zmactep/packstream/actions?query=workflow%3A%228.0.2%22)
 [![hackage](https://img.shields.io/hackage/v/packstream.svg)](https://hackage.haskell.org/package/packstream)
 [![hackage-deps](https://img.shields.io/hackage-deps/v/packstream.svg)](https://hackage.haskell.org/package/packstream)
 

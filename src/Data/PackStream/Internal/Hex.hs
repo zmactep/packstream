@@ -10,7 +10,7 @@ module Data.PackStream.Internal.Hex (Hex(..)) where
 import qualified Data.ByteString.Char8      as B
 import qualified Data.ByteString.Lazy.Char8 as L
 #if !MIN_VERSION_base(4, 13, 0)
-import           Control.Monad.Fail (MonadFail)
+import Control.Monad.Fail (MonadFail)
 #endif
 
 -- | Convert strings into hexadecimal and back.

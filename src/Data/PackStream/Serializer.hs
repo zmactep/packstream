@@ -17,7 +17,7 @@ import qualified Data.ByteString as BS (singleton, cons, append, length, concat,
 import Data.Text (Text)
 import Data.Text.Encoding (encodeUtf8)
 import Data.Map.Strict (Map, toList)
-import Data.Word (Word8, Word)
+import Data.Word (Word8)
 
 
 -- |Represent '()' as 'PackStream' 'ByteString'

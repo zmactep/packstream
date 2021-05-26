@@ -19,7 +19,7 @@ import Data.Map.Strict (Map, fromList)
 import Data.Binary (Word8)
 import Control.Monad.State ( gets, modify )
 import Control.Monad.Except (throwError)
-import Control.Monad (replicateM, (>=>))
+import Control.Monad (replicateM)
 
 
 -- |Parse '()'

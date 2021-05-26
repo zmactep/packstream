@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE CPP #-}
 
 import Test.Hspec
 import Data.Text (Text)
@@ -8,7 +9,10 @@ import qualified Data.ByteString as B (pack, unpack, take, empty)
 import Data.ByteString.Lazy (toStrict, fromStrict)
 import Data.Map.Strict (Map)
 import qualified Data.Map.Strict as M (empty, fromList)
-import Control.Monad.Fail (MonadFail (..))
+
+#if !MIN_VERSION_base(4, 13, 0)
+import Control.Monad.Fail (MonadFail)
+#endif
 
 import Data.PackStream (PackStreamValue (..), Value(..), (=:), unpackFail)
 import Data.PackStream.Internal.Hex (Hex(..))

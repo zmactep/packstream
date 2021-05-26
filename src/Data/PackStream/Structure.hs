@@ -3,9 +3,9 @@
 module Data.PackStream.Structure
 ( ToStructure (..), FromStructure (..)
 , Node (..), Relationship (..), UnboundRelationship (..), Path (..)
-, Date (..), Time (..), LocalTime (..), DateTime (..), DateTimeZoneId (..), LocalDateTime (..)
-, Duration (..)
-, Point2D (..), Point3D (..)
+-- , Date (..), Time (..), LocalTime (..), DateTime (..), DateTimeZoneId (..), LocalDateTime (..)
+-- , Duration (..)
+-- , Point2D (..), Point3D (..)
 ) where
 
 import Data.Text (Text)
@@ -14,7 +14,6 @@ import Control.Monad.Except (MonadError(..))
 import Control.Monad ((>=>))
 
 import Data.PackStream.Internal.Type
-import Data.PackStream ( PackStreamValue(..) )
 
 -- * Structure coverters
 -- 
@@ -108,6 +107,7 @@ instance FromStructure Path where
     fromStructure (Structure 0x50 [L nds, L rls, L is]) = Path <$> traverse (fromValue >=> fromStructure) nds 
                                                                <*> traverse (fromValue >=> fromStructure) rls 
                                                                <*> traverse fromValue is
+    fromStructure _                                     = throwError $ WrongStructure "Path"
 
 -- |The days are days since the Unix epoch
 newtype Date = Date { days :: Int -- ^The days are days since the Unix epoch
@@ -121,11 +121,11 @@ instance FromStructure Date where
   fromStructure (Structure 0x44 [I ds]) = pure $ Date ds
   fromStructure _                       = throwError $ WrongStructure "Date"
 
-data Time
-data LocalTime
-data DateTime
-data DateTimeZoneId
-data LocalDateTime
-data Duration
-data Point2D
-data Point3D
+-- data Time
+-- data LocalTime
+-- data DateTime
+-- data DateTimeZoneId
+-- data LocalDateTime
+-- data Duration
+-- data Point2D
+-- data Point3D

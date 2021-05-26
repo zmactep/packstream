@@ -1,5 +1,6 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE CPP #-}
 module Data.PackStream
 (
   PackStreamError (..), PackStream (..), PackStreamValue (..)
@@ -16,8 +17,10 @@ import Data.ByteString (ByteString)
 import Data.Text (Text)
 import Data.Map.Strict (Map)
 import Control.Monad.Except (MonadError(..), liftEither)
-import Control.Monad.Fail (MonadFail (..))
 
+#if !MIN_VERSION_base(4, 13, 0)
+import Control.Monad.Fail (MonadFail)
+#endif
 
 -- |The data types that can be interpreted or parsed to/from 'PackStream' 'ByteString'
 class PackStreamValue a where
