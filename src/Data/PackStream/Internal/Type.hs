@@ -30,6 +30,7 @@ data PackStreamError = NotNull             -- ^This 'ByteString' doesn't represe
                      | NotStructure        -- ^This 'ByteString' doesn't represent any 'Structure'
                      | NotValue            -- ^This 'ByteString' doesn't represent any 'Value'
                      | WrongStructure Text -- ^This 'ByteString' doesn't represent specific 'Structure'
+                     | DictHasNoKey Text   -- ^The dictionary doesn't have a specified 'Text' key
   deriving (Show, Eq, Ord)
 
 -- |Basic parser type. It works like parser combinators for binary data that represents PackStream.

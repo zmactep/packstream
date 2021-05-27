@@ -5,7 +5,7 @@ module Data.PackStream
 (
   PackStreamError (..), PackStream (..), PackStreamValue (..)
 , unpackStream, unpackFail, unpackThrow
-, Value (..), (=:)
+, Value (..), ToValue (..), FromValue (..), (=:), at
 , Structure (..)
 ) where
 
@@ -13,9 +13,10 @@ import Data.PackStream.Internal.Type
 import qualified Data.PackStream.Parser as P
 import qualified Data.PackStream.Serializer as S
 
+import Prelude hiding (lookup)
 import Data.ByteString (ByteString)
 import Data.Text (Text)
-import Data.Map.Strict (Map)
+import Data.Map.Strict (Map, lookup)
 import Control.Monad.Except (MonadError(..), liftEither)
 
 #if !MIN_VERSION_base(4, 13, 0)
@@ -82,3 +83,9 @@ unpackFail :: (MonadFail m, PackStreamValue a) => ByteString -> m a
 unpackFail bs = case unpackStream unpack bs of
                   Right x -> pure x
                   Left  e -> fail $ show e
+
+-- |Extract a value of a specific type from 'Value' dictionary
+at :: (MonadError PackStreamError m, FromValue a) => Map Text Value -> Text -> m a
+at dict key = case key `lookup` dict of
+                Just val -> liftEither $ fromValue val
+                Nothing  -> throwError $ DictHasNoKey key

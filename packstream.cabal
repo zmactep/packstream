@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d55d5d199583510c5e154e94d070d24639588316cf5fa50e70104fa10f4bf14c
+-- hash: 47ff8f45a904776e9131ea25bea1f85eacab002f8e61ac81b1403b77f5ac5355
 
 name:           packstream
-version:        0.1.0.1
+version:        0.1.0.2
 synopsis:       PackStream converter for Neo4j BOLT protocol
 description:    Please see the README on GitHub at <https://github.com/zmactep/packstream#readme>
 category:       Data
